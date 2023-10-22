@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob('../posts/*.md')//get all posts
+const tags = [...new Set(allPosts.flatMap(post => post.frontmatter.tags))] //filter unique tags
+
+const title = "tags index"
+const description = "tags index description"
+---
+
+
+<BaseLayout title={title} description={description}>
+    <h1>tags index</h1>
+    <div class="tags">
+        {tags.map((tag:any) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
+    </div>
+  
+</BaseLayout>
+
+<style>
+
+  
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .tag {
+        margin-right: 0.25rem;
+    }
+</style>
