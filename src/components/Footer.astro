@@ -1,0 +1,18 @@
+---
+import Social from "./Social.astro";
+const platform = "github";
+const username = "The-Oracle-AT";
+---
+<style>
+    footer {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+</style>
+
+<footer>
+  <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+  
+  <p>Let's connect on <Social platform="linkedin" username="in/lapane-maela" /></p>
+</footer>

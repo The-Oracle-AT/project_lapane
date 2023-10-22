@@ -1,5 +1,7 @@
 ---
-title: 'Genesis'
+layout: ../../layouts/MarkdownPostLayout.astro
+chapter: 'Genesis'
+title: 'My First Blog Post'
 pubDate: 2023-10-21
 description: 'This is the first post of my project gallery'
 author: 'Lapane'
@@ -8,9 +10,6 @@ image:
     alt: 'my face'
 tags: ["astro", "blogging", "learning in public", "personal projects", "web development"]
 ---
-# My First Blog Post
-
-Published on: 2022-07-01
 
 Welcome to my _new blog_ about learning JS libraries and building projects! Here, I will share my learning journey as I build a new website.
 

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../stylesheets/globalStyles.css';
+const pageTitle = "About Me"
+const pageDescription = "About me page for Lapane.io"
+const identity = {
+	name: "Lapane",
+	location: "Earth",
+	Occupation: ["Math Student", "Blogger", " and Programmer"],
+	Interests: ["learniing Mathematics", "Programming", "Web Development",
+		"Design", "Reading", "Longboarding", "Dancing", "Gaming"]
+}
+const skills = ["HTML", "CSS", "JS", "React", "Astro", "Python", "SQL", "R"]
+
+// Conditional rendering varibles
+const finished:boolean = false;
+// Get today's date
+const today:any = new Date();
+const year:number = today.getFullYear();
+const lastDay:any = new Date(year, 11, 31);
+const daysUntilDec31:number = Math.floor(( lastDay - today) / (1000 * 60 * 60 * 24));
+const targetDate:any = new Date(today.getFullYear(), today.getMonth(), today.getDate() + daysUntilDec31);
+
+---
+<BaseLayout pageTitle = {pageTitle} pageDescription = {pageDescription}>
+	<div class="content-container">
+		<h2>Identity</h2>
+		<ul>
+			<li>My name is {identity.name}</li>
+			<li>I live on {identity.location}
+			and i am a {identity.Occupation.join(", ")}</li>
+			<li>My hobbies are {identity.Interests.join(", ")}</li>
+		</ul>
+		<h2>My skills are:</h2>
+		<ul>{skills.map((skill) => (<li class="skill">{skill}</li>))}</ul>
+		<p>i plan to have this Portfolio on the web in {daysUntilDec31} days.</p>
+	</div>
+</BaseLayout>

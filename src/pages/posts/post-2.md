@@ -1,5 +1,7 @@
 ---
-title: 'Genesis'
+layout: ../../layouts/MarkdownPostLayout.astro
+chapter: 'Genesis'
+title: 'The Second Post'
 pubDate: 2023-10-21
 description: 'This is the first post of my project gallery'
 author: 'Lapane'
@@ -8,8 +10,6 @@ image:
     alt: 'my face'
 tags: ["astro", "blogging", "learning in public", "personal projects", "web development"]
 ---
-
-## Post 2:
 
 Proident laboris dolore minim duis velit deserunt ipsum pariatur esse. Veniam reprehenderit excepteur laboris ea eiusmod laborum. Nostrud ullamco in sit voluptate laborum proident eu voluptate. Sint magna tempor nostrud ullamco esse amet esse adipisicing consequat. Nisi ullamco nisi sunt tempor occaecat mollit.
 

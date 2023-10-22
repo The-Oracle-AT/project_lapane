@@ -1,0 +1,29 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import '../stylesheets/globalStyles.css';
+const defaultValues = {
+    pageTitle: 'Project Lapane',
+    pageDescription: 'A website for the Project Lapane',
+}
+const {pageTitle, pageDescription} = Astro.props || defaultValues;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel=s"icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<Header />
+		<h1>{pageDescription}</h1>
+        <slot />
+		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
+	</body>
+</html>
