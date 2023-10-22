@@ -1,8 +1,14 @@
 ---
+import Greeting from '../components/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Home Page";
-const pageDescription = "Hi! My name is Lapane blooop. Welcome to my projects gallery";
+const pageDescription = "Hi! My name is Lapane. Welcome to my projects gallery";
+const messages = [
+  "Hi", "Sawubona", "avhusheni", "Dumela", "Thobela", "Molo", "Aah"
+]
 ---
 <BaseLayout pageTitle = {pageTitle} pageDescription = {pageDescription}>
   <h2>My awesome blog subtitle</h2>
+  <Greeting client:load arrayOfMessages={messages} />{/**hydration: reruns js on client to get new greeting */}
+
 </BaseLayout>

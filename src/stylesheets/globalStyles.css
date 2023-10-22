@@ -94,6 +94,15 @@ a {
     border-radius: 0.2rem;
 }
 
+html.dark {
+    background-color: #0d0950;
+    color: #fff;
+  }
+  
+  .dark .nav-links a {
+    color: #fff;
+  }
+
 a:hover {
     background-color: var(--Primary);
 }
