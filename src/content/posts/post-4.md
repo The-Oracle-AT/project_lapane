@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+
 chapter: 'Genesis'
 title: My Fourth Blog Post
 author: "Lapane"

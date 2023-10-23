@@ -1,15 +1,16 @@
 ---
+import { getCollection } from 'astro:content';
 import BlogPost from '../../components/BlogPost.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-    const allPosts = await Astro.glob('../posts/*.md');//get all posts
+    const allPosts = await getCollection("posts");//get all posts
         //get all unique tags by adding all tag arrays the filtering them to ignore non-uniques
-    const uniqueTags = [...new Set(allPosts.map((post:any) => post.frontmatter.tags).flat())];
+    const uniqueTags = [...new Set(allPosts.map((post:any) => post.data.tags).flat())];
 
     return uniqueTags.map((tag:any) => {
         //filter posts by tags
-        const filteredPosts = allPosts.filter((post:any) => post.frontmatter.tags.includes(tag));
+        const filteredPosts = allPosts.filter((post:any) => post.data.tags.includes(tag));
         
         return {params: { tag }, props: { posts: filteredPosts },};
     });
@@ -21,6 +22,6 @@ const { posts } = Astro.props;
 <BaseLayout pageTitle="Related Tags">
     <p>Posts tagged with "{tag}"</p>
     <ul>
-        {posts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title} chapter={post.frontmatter.chapter}/>)}
+        {posts.map((post:any) => <BlogPost url={`/posts/${post.slug}`} title={post.data.title} chapter={post.data.chapter}/>)}
     </ul>
 </BaseLayout>

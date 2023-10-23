@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+
 chapter: 'Genesis'
 title: 'The Second Post'
 pubDate: 2023-10-21

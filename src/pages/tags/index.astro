@@ -1,7 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const allPosts = await Astro.glob('../posts/*.md')//get all posts
-const tags = [...new Set(allPosts.flatMap(post => post.frontmatter.tags))] //filter unique tags
+const allPosts = await getCollection("posts")//get all posts
+const tags = [...new Set(allPosts.flatMap(post => post.data.tags))] //filter unique tags
 
 const title = "tags index"
 const description = "tags index description"
