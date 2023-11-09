@@ -11,7 +11,15 @@ const pageDescription = "Blog Posts";
 <BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
 
 	<p>This is where I will post about my journey learning and creating projects</p>
-	<ul>
+	<div class="post-cards">
 		{allPosts.map((post) => <BlogPost title={post.frontmatter.title} chapter = {post.frontmatter.chapter} url = {post.url} />)}
-	</ul>
+	</div>
 </BaseLayout>
+<style>
+	.post-cards {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+	}
+
+</style>

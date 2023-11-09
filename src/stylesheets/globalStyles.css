@@ -1,15 +1,26 @@
 :root {
     --Text: #ffffff;
-    --Background: #19141a;
+    --BackgroundOne: #19141a;
+    --BackgroundTwo: #392647;
+    --BackgroundThree: #41397e;
     --LinkBackground: #686675;
     --Primary: #4426c7;
     --Secondary: #f4f4f4;
     --Accent: #cf4307;
 }
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background: linear-gradient(var(--BackgroundOne), var(--BackgroundTwo), var(--BackgroundThree));
+    background-position: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+
+}
 body {
-    background-color: var(--Background);
-    width: 100%;
-    max-width: 80ch;
+    width: 90%;
     line-height: 1.5;
     color: var(--Text);
     font-family: 'Roboto', sans-serif;
