@@ -22,6 +22,7 @@ const {pageTitle, pageDescription} = Astro.props || defaultValues;
 	</head>
 	<body>
 		<Header  />
+		<slot name="header-graphic"/>
 		<h1 transition:animate={"slide"}>{pageDescription}</h1>
 		<br />
         <slot />

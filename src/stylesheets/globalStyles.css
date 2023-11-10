@@ -16,15 +16,19 @@ html {
     background-position: fixed;
     background-repeat: no-repeat;
     margin: 0;
-    padding: 0;
+    padding-bottom: 1em;
+    min-height: 100%;
+
 
 }
 body {
     font: "Roboto", sans-serif;
     background-color: var(--Background);
     color: var(--Text);
+    margin: 0;
+    max-width: 90%;
     margin: 0 auto;
-    max-width: 80%;
+    padding: auto;
 
 }
 a {
