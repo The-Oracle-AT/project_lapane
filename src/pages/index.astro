@@ -9,24 +9,12 @@ const messages = [
 ---
 <BaseLayout pageTitle = {pageTitle} pageDescription = {pageDescription}>
   <div class="header-graphic" slot="header-graphic">
-    <span >Hi!</span>
-    <span>, I'm Lapane. </span>
+    <span>Hi!, I'm Lapane.</span>
     <span>Explore My portfolio Website and other projects</span>
   </div>
   <Greeting client:load arrayOfMessages={messages} />{/**hydration: reruns js on client to get new greeting */}
 
 </BaseLayout>
 <style>
-  .header-graphic {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-    font-weight: 900;
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    margin-bottom: 2rem;
-  }
+
 </style>

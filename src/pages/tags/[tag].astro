@@ -20,6 +20,8 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 <BaseLayout pageTitle="Related Tags">
+    <div class="header-graphic" slot="header-graphic">
+		<span>Related posts</span>
     <p>Posts tagged with "{tag}"</p>
     <ul>
         {posts.map((post:any) => <BlogPost url={`/posts/${post.slug}`} title={post.data.title} chapter={post.data.chapter}/>)}

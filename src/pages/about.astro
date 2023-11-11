@@ -23,16 +23,15 @@ const targetDate:any = new Date(today.getFullYear(), today.getMonth(), today.get
 
 ---
 <BaseLayout pageTitle = {pageTitle} pageDescription = {pageDescription}>
+	<div class="header-graphic" slot="header-graphic">
+		<span>About</span>
+	</div>
 	<div class="content-container">
-		<h2>Identity</h2>
-		<ul>
-			<li>My name is {identity.name}</li>
-			<li>I live on {identity.location}
-			and i am a {identity.Occupation.join(", ")}</li>
-			<li>My hobbies are {identity.Interests.join(", ")}</li>
-		</ul>
+		My name is {identity.name}, I live on {identity.location} and i am a {identity.Occupation.join(", ")}
+		My hobbies are {identity.Interests.join(", ")}
+		
 		<h2>My skills are:</h2>
-		<ul>{skills.map((skill) => (<li class="skill">{skill}</li>))}</ul>
-		<p>i plan to have this Portfolio on the web in {daysUntilDec31} days.</p>
+		{skills.map((skill) => (<li class="skill">{skill}</li>))}
+		<p><div class="date">{daysUntilDec31} </div>days left to completetion</p>
 	</div>
 </BaseLayout>

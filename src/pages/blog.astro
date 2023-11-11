@@ -10,7 +10,12 @@ const pageTitle = "Blog";
 const pageDescription = "Blog Posts";
 ---
 <BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
-
+	<div class="header-graphic" slot="header-graphic">
+		<span>B</span>
+		<span>l</span>
+		<span>o</span>
+		<span>g</span>
+	</div>
 	<p>This is where I will post about my journey learning and creating projects</p>
 	<div class="post-cards">
 		{allPosts.map((post) => <BlogPost title={post.data.title} chapter = {post.data.chapter} url = {`/posts/${post.slug}/`} />)}
@@ -21,6 +26,46 @@ const pageDescription = "Blog Posts";
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-evenly;
+	}
+	.header-graphic {
+		font-family: "cursive";
+	}
+	
+	.header-graphic span:nth-of-type(2n + 1)  {
+    	animation: blink 2s infinite;
+	}
+	@keyframes blink {
+		78% {
+			color: inherit;
+			text-shadow: inherit;
+		}
+		79%{
+			color: #333;
+		}
+		80% {
+			
+			text-shadow: none;
+		}
+		81% {
+			color: inherit;
+			text-shadow: inherit;
+		}
+		82% {
+			color: #333;
+			text-shadow: none;
+		}
+		83% {
+			color: inherit;
+			text-shadow: inherit;
+		}
+		92% {
+			color: #333;
+			text-shadow: none;
+		}
+		92.5% {
+			color: inherit;
+			text-shadow: inherit;
+		}
 	}
 
 </style>

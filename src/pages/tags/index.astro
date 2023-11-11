@@ -10,10 +10,13 @@ const description = "tags index description"
 
 
 <BaseLayout title={title} description={description}>
-    <h1>tags index</h1>
-    <div class="tags">
-        {tags.map((tag:any) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
-    </div>
+  <div class="header-graphic" slot="header-graphic">
+		<span>Related posts</span>
+  </div>
+  <h1>tags index</h1>
+  <div class="tags">
+    {tags.map((tag:any) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
+  </div>
   
 </BaseLayout>
 
