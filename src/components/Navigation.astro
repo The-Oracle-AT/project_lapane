@@ -1,52 +1,92 @@
 ---
+import Hamburger from "./Hamburger.astro";
+
 ---
-<div class="flex justify-center">
-    {/**<a href="#" class="text-2xl p-2">🌙</a>*/}
-    <ul class="flex justify-end space-x-6 items-center text-xl">
-        <li><a class="hover:text-blue-100" href="/">Home</a></li>
-        <li><a class="hover:text-blue-100" href="/blog/">Blog</a></li>
-        <li><a class="hover:text-blue-100" href="/about/" data-astro-reload>About</a></li>
-        <li><a class="hover:text-blue-100" href="/tags/">Tags</a></li>
+<div class="sidebar">
+    <ul class="nav-bar">
+        <li><a class="nav-link" href="/"><img src="/src/assets/site_logo.svg" alt="logo" width="100%" class="nav-logog"></a></li>
+        <li><Hamburger /></li>
+        <li><a class="nav-link" href="/">
+            <img src="/src/assets/home_icon.svg" alt = "Home" width="100%"/>
+            <p>Home</p>
+        </a></li>
+        <li><a class="nav-link" href="/blog/">
+            <img src="/src/assets/learn_icon.svg" alt = "Learn" width="100%"/>
+            <p>Learn</p>
+        </a></li>
+        <li><a class="nav-link" href="/about/" data-astro-reload>
+            <img src="/src/assets/about_us_icon.svg" alt = "about us" width="100%"/>
+            <p>About Us</p>
+        </a></li>
+        <li><a class="nav-link" href="/tags/">
+            <img src="/src/assets/tag_icon.svg" alt = "Related" width="100%"/>
+            <p>Related</p>
+        </a></li>
     </ul>
 </div>
-<style>
-    a{
+<style lang="scss">
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5rem;
+        background-color: black;
+        overflow-x: hidden;
+        transition: all 0.5s ease-in-out;
+
+        .nav-bar {
+        margin-left: 2rem;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+            li {
+                height: 5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                border-radius: 1rem;
+
+                
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+        
+        
+    }
+    a {
         text-decoration: none;
         background-color: transparent;
         transition: all 0.5s ease-in-out;
-    }
-    /**textshadow credit - https://css-tricks.com/how-to-create-neon-text-with-css/ */
-    @keyframes pulse {
-    from{
-        box-shadow: 0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px rgb(0, 255, 242),
-    0 0 82px rgb(0, 217, 255),
-    0 0 92px rgb(0, 183, 255),
-    0 0 102px rgb(0, 183, 255),
-    0 0 151px rgb(0, 195, 255);
-    background-color: cyan;
-    color: black;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    to{
-        box-shadow: none;
-        }
-}
-    a:hover{
-        text-decoration: none;
-        background-color: transparent;
-        padding: 0%;
-        animation: pulse 01s ease-in;
-        transform: scale(1.2);
-        text-shadow: 0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
+    }
+    img {
+        height: 3rem;
+        width: 100%;
+        margin: 0;
     }
 
+
+
+    @media screen and (max-width: 600px) {
+        .sidebar {
+            width: 100%;
+        }
+    }
 </style>

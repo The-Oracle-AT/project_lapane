@@ -20,15 +20,27 @@ const {pageTitle, pageDescription} = Astro.props || defaultValues;
 		<title>{pageTitle}</title>
 		<ViewTransitions />
 	</head>
+
 	<body>
-		<Header  />
-		<slot name="header-graphic"/>
-		<h1 transition:animate={"slide"}>{pageDescription}</h1>
-		<br />
-        <slot />
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
+		<nav>
+			<Header  />
+		</nav>
+		<section class="other">
+			<slot name="header-graphic"/>
+			<h1 transition:animate={"slide"}>{pageDescription}</h1>
+			<slot />
+			<Footer />
+		</section>
+	
 	</body>
+	<script>
+		import "../scripts/menu.js";
+import "../scripts/menu.js";
+			</script>
 </html>
+
+<style lang="scss">
+	.other {
+		margin-left: 4rem;
+	}
+</style>

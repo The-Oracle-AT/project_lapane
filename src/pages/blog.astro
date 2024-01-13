@@ -21,6 +21,10 @@ const pageDescription = "Blog Posts";
 		{allPosts.map((post) => <BlogPost title={post.data.title} chapter = {post.data.chapter} url = {`/posts/${post.slug}/`} />)}
 	</div>
 </BaseLayout>
+
+
+
+
 <style>
 	.post-cards {
 		display: flex;

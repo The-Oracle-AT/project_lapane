@@ -51,10 +51,7 @@ a {
     border-radius: 0.15rem;
     padding: 0.2rem;
 }
-a:hover {
-    background-color: var(--Primary);
-    
-}
+
 
 @media (max-width: 768px) {
     .nav-links {
@@ -118,9 +115,7 @@ a:hover {
 
     }
   }
-  .header-graphic span:hover {
-    animation: blink 1s;
-  }
+
 
 
 
