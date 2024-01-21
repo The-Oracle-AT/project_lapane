@@ -1,8 +1,8 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+
 import '../stylesheets/globalStyles.css';
 const defaultValues = {
     pageTitle: 'Project Lapane',
@@ -30,17 +30,21 @@ const {pageTitle, pageDescription} = Astro.props || defaultValues;
 			<h1 transition:animate={"slide"}>{pageDescription}</h1>
 			<slot />
 			<Footer />
+
 		</section>
+		
 	
 	</body>
-	<script>
-		import "../scripts/menu.js";
-import "../scripts/menu.js";
-			</script>
+
 </html>
 
 <style lang="scss">
 	.other {
-		margin-left: 4rem;
+		padding-left: 4rem;
 	}
 </style>
+
+<script>
+	import '../scripts/menu.js';
+import '../scripts/menu.js';
+</script>

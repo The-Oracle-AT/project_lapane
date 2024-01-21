@@ -2,10 +2,10 @@
 import Hamburger from "./Hamburger.astro";
 
 ---
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
     <ul class="nav-bar">
-        <li><a class="nav-link" href="/"><img src="/src/assets/site_logo.svg" alt="logo" width="100%" class="nav-logog"></a></li>
-        <li><Hamburger /></li>
+        <li><a class="nav-link" href="/"><img src="/src/assets/site_logo.svg" alt="logo" width="100%" class="nav-logo"></a></li>
+        <li id="hamburger-icon"><Hamburger /></li>
         <li><a class="nav-link" href="/">
             <img src="/src/assets/home_icon.svg" alt = "Home" width="100%"/>
             <p>Home</p>
@@ -55,7 +55,7 @@ import Hamburger from "./Hamburger.astro";
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                border-radius: 1rem;
+                border-radius: 0.5rem;
 
                 
                 &:hover {
@@ -81,12 +81,30 @@ import Hamburger from "./Hamburger.astro";
         width: 100%;
         margin: 0;
     }
+    p {
+        font-size: small;
+    }
 
 
-
-    @media screen and (max-width: 600px) {
-        .sidebar {
+    .sidebar.wide {
+        width: 15rem;
+        a {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
             width: 100%;
+            img:not(.nav-logo) {
+                height: 3rem;
+                width: 3rem;
+                margin: 1rem;
+                margin-left: 2rem;
+            
+            }
+            p {
+               
+            }
         }
+
     }
 </style>

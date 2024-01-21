@@ -1,5 +1,5 @@
-document.addEventListener('astro:page-laod', () => { //make mobile menu interactive after navigating to a new page
-  document.querySelector('.hamburger').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('expanded');
-  });
-})
+document.getElementById('hamburger-icon').addEventListener('click', () => {
+  console.log('clicked');
+  document.getElementById('sidebar').classList.toggle('wide');
+  document.getElementById('hamburger').classList.toggle('open');
+});
